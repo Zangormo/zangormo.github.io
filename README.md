@@ -59,9 +59,9 @@ Default is `false`. Flip both pages to `true` when the app goes public. Store li
 
 ## Screenshots
 
-Screenshots live in `/assets/screenshots/` as `screenshot-1.jpg` … `screenshot-6.jpg` and are shown in that order in a horizontally scrollable gallery on `/homepoker-cashier/`.
+Screenshots live in `/assets/screenshots/` as `screenshot-1.jpg` … `screenshot-6.jpg` and are shown in that order as a stack of cards on `/homepoker-cashier/` (tap or swipe the front card, use the arrows, or pick a screen from the list).
 
-To add, remove or reorder screenshots, edit the `<ul class="gallery">` list in `/homepoker-cashier/index.html` and give each image an `alt` text describing the screen. Use simple file names: **no `#`, spaces or other special characters** (`#` starts a URL fragment, so `#1.jpg` can never load). Crop the phone status bar off the top; the gallery frame is 576 × 1224 (portrait). Keep them small (≈ 576 px wide JPG/WebP).
+To add, remove or reorder screenshots, edit the `<ol class="shots">` list in `/homepoker-cashier/index.html`: give each image an `alt` text describing the screen, and each `<li>` a `data-title` and a one-line `data-desc` shown next to the stack. The script at the bottom of the page builds the rest. Use simple file names: **no `#`, spaces or other special characters** (`#` starts a URL fragment, so `#1.jpg` can never load). Crop the phone status bar off the top; the gallery frame is 576 × 1224 (portrait). Keep them small (≈ 576 px wide JPG/WebP).
 
 ## CV
 

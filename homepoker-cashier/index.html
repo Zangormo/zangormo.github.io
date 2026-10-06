@@ -104,21 +104,38 @@
       </div>
     </section>
 
-    <section class="section tight" aria-labelledby="screens-title">
+    <section class="section tight shots-section" aria-labelledby="screens-title">
       <div class="container">
         <div class="section-head">
           <p class="kicker"><span class="suit" aria-hidden="true">♦</span> Screenshots</p>
           <h2 id="screens-title">A look inside</h2>
         </div>
         <!-- Screenshot files: /assets/screenshots/screenshot-1.jpg … screenshot-6.jpg (see README) -->
-        <ul class="gallery" tabindex="0" aria-label="App screenshots, scrollable">
-          <li><figure><a href="/assets/screenshots/screenshot-1.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-1.jpg" alt="New game setup: starting stack, payout rounding and optional side games like bomb pot and firetruck" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>New game</figcaption></figure></li>
-          <li><figure><a href="/assets/screenshots/screenshot-2.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-2.jpg" alt="Live game: money and chips on the table, blinds, and a seating chart of the players" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Live game</figcaption></figure></li>
-          <li><figure><a href="/assets/screenshots/screenshot-3.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-3.jpg" alt="End game chip check confirming every chip is accounted for, with each player's final chips" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Chip check</figcaption></figure></li>
-          <li><figure><a href="/assets/screenshots/screenshot-4.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-4.jpg" alt="Final chip counts with a results table of buy-ins, chips, cash-out and net for each player" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Results</figcaption></figure></li>
-          <li><figure><a href="/assets/screenshots/screenshot-5.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-5.jpg" alt="Settlement: a short list of who pays whom, with checkboxes to mark payments" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Settlement</figcaption></figure></li>
-          <li><figure><a href="/assets/screenshots/screenshot-6.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-6.jpg" alt="Players list with profit, games played and buy-ins for each player" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Players</figcaption></figure></li>
-        </ul>
+        <!-- Without JS the screenshots show as a plain grid; the script turns them into a card stack. -->
+        <div class="showcase" data-showcase>
+          <div class="shot-stage">
+            <ol class="shots plain-list" aria-label="App screenshots">
+              <li class="shot" data-title="New game" data-desc="Set the starting stack, payout rounding and optional side games like bomb pot and firetruck."><img src="/assets/screenshots/screenshot-1.jpg" alt="New game setup: starting stack, payout rounding and optional side games like bomb pot and firetruck" width="576" height="1224" decoding="async"></li>
+              <li class="shot" data-title="Live game" data-desc="Money and chips on the table, the current blinds and a seating chart of everyone playing."><img src="/assets/screenshots/screenshot-2.jpg" alt="Live game: money and chips on the table, blinds, and a seating chart of the players" width="576" height="1224" loading="lazy" decoding="async"></li>
+              <li class="shot" data-title="Chip check" data-desc="Before anyone cashes out, the app confirms every chip is accounted for."><img src="/assets/screenshots/screenshot-3.jpg" alt="End game chip check confirming every chip is accounted for, with each player's final chips" width="576" height="1224" loading="lazy" decoding="async"></li>
+              <li class="shot" data-title="Results" data-desc="Buy-ins, final chips, cash-out and net for each player in one table."><img src="/assets/screenshots/screenshot-4.jpg" alt="Final chip counts with a results table of buy-ins, chips, cash-out and net for each player" width="576" height="1224" loading="lazy" decoding="async"></li>
+              <li class="shot" data-title="Settlement" data-desc="A short list of who pays whom, with checkboxes to mark payments as done."><img src="/assets/screenshots/screenshot-5.jpg" alt="Settlement: a short list of who pays whom, with checkboxes to mark payments" width="576" height="1224" loading="lazy" decoding="async"></li>
+              <li class="shot" data-title="Players" data-desc="Profit, games played and buy-ins for every regular at your table."><img src="/assets/screenshots/screenshot-6.jpg" alt="Players list with profit, games played and buy-ins for each player" width="576" height="1224" loading="lazy" decoding="async"></li>
+            </ol>
+            <button class="shot-hit" type="button" aria-label="Next screenshot" hidden></button>
+          </div>
+          <div class="shot-info" hidden>
+            <p class="shot-count"><span data-shot-num>01</span> / <span data-shot-total>06</span></p>
+            <h3 class="shot-title" data-shot-title aria-live="polite">New game</h3>
+            <p class="shot-desc" data-shot-desc></p>
+            <div class="shot-controls">
+              <button class="shot-btn" type="button" data-shot-prev aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="shot-btn" type="button" data-shot-next aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+              <span class="shot-hint">Tap the card</span>
+            </div>
+            <ol class="shot-index plain-list" aria-label="Jump to screenshot"></ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -169,5 +186,90 @@
       <p class="copyright">© 2026 Zangormo Util</p>
     </div>
   </footer>
+
+  <script>
+    // Screenshot card stack: click/tap or swipe the front card, arrows, or the index to change screens.
+    (function () {
+      var root = document.querySelector('[data-showcase]');
+      if (!root) return;
+      var shots = Array.prototype.slice.call(root.querySelectorAll('.shot'));
+      var n = shots.length;
+      var hit = root.querySelector('.shot-hit');
+      var info = root.querySelector('.shot-info');
+      var index = root.querySelector('.shot-index');
+      var pad = function (i) { return (i < 9 ? '0' : '') + (i + 1); };
+      var current = 0;
+      var items = [];
+
+      root.querySelector('[data-shot-total]').textContent = pad(n - 1);
+      shots.forEach(function (shot, i) {
+        var li = document.createElement('li');
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'shot-tab';
+        b.innerHTML = '<span class="n">' + pad(i) + '</span><span class="t"></span>';
+        b.querySelector('.t').textContent = shot.dataset.title;
+        b.addEventListener('click', function () { go(i); });
+        li.appendChild(b);
+        index.appendChild(li);
+        items.push(b);
+        shot.addEventListener('animationend', function () { shot.classList.remove('is-out', 'is-in'); });
+      });
+
+      function render() {
+        shots.forEach(function (shot, i) {
+          var pos = (i - current + n) % n;
+          shot.dataset.pos = pos > 3 ? 3 : pos;
+          shot.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+        });
+        items.forEach(function (b, i) {
+          if (i === current) b.setAttribute('aria-current', 'true');
+          else b.removeAttribute('aria-current');
+        });
+        var shot = shots[current];
+        root.querySelector('[data-shot-num]').textContent = pad(current);
+        root.querySelector('[data-shot-title]').textContent = shot.dataset.title;
+        root.querySelector('[data-shot-desc]').textContent = shot.dataset.desc;
+        // warm up the next image so the flip never shows an empty card
+        shots[(current + 1) % n].querySelector('img').loading = 'eager';
+      }
+
+      function go(target, dir) {
+        target = (target + n) % n;
+        if (target === current) return;
+        if (!dir) dir = target > current ? 1 : -1;
+        var prev = shots[current];
+        current = target;
+        if (dir > 0) prev.classList.add('is-out');
+        else shots[current].classList.add('is-in');
+        render();
+      }
+
+      root.querySelector('[data-shot-prev]').addEventListener('click', function () { go(current - 1, -1); });
+      root.querySelector('[data-shot-next]').addEventListener('click', function () { go(current + 1, 1); });
+
+      var startX = null, swiped = false;
+      hit.addEventListener('pointerdown', function (e) { startX = e.clientX; swiped = false; });
+      hit.addEventListener('pointerup', function (e) {
+        if (startX === null) return;
+        var dx = e.clientX - startX;
+        startX = null;
+        if (Math.abs(dx) > 40) { swiped = true; go(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); }
+      });
+      hit.addEventListener('click', function () {
+        if (swiped) { swiped = false; return; }
+        go(current + 1, 1);
+      });
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { go(current + 1, 1); e.preventDefault(); }
+        if (e.key === 'ArrowLeft') { go(current - 1, -1); e.preventDefault(); }
+      });
+
+      hit.hidden = false;
+      info.hidden = false;
+      root.classList.add('is-ready');
+      render();
+    })();
+  </script>
 </body>
 </html>

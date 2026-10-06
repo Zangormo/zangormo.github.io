@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+  CONFIG: data-play-live controls the Google Play button on this page.
+  "false" = disabled "Coming soon to Google Play" badge (default)
+  "true"  = live "Get it on Google Play" link
+-->
+<html lang="en" data-play-live="false">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomePoker Cashier — The bank for your home poker night</title>
+  <meta name="description" content="HomePoker Cashier tracks buy-ins, rebuys and cash-outs at your home poker game, checks the chips against the money and shows exactly who pays whom. Offline, no account.">
+  <link rel="canonical" href="https://zangormo.github.io/homepoker-cashier/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zangormo Util">
+  <meta property="og:title" content="HomePoker Cashier — The bank for your home poker night">
+  <meta property="og:description" content="Track buy-ins, rebuys and cash-outs. When the game ends, see exactly who pays whom. Everything stays on your phone.">
+  <meta property="og:url" content="https://zangormo.github.io/homepoker-cashier/">
+  <meta name="theme-color" content="#121417">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Zangormo Util</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/#apps">Apps</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="app-head">
+            <img src="/assets/favicon.svg" alt="HomePoker Cashier app icon: green spade on a dark background" width="76" height="76">
+            <p class="kicker"><span class="suit" aria-hidden="true">♠</span> Android app</p>
+          </div>
+          <h1>HomePoker Cashier</h1>
+          <p class="tagline">The bank for your home poker night.</p>
+          <p class="lead">Track buy-ins, rebuys and cash-outs as the night goes on. When the game ends, the app checks the chips against the money and tells everyone exactly who pays whom.</p>
+          <div class="actions">
+            <a class="btn btn-primary play-live" href="https://play.google.com/store/apps/details?id=com.zango.pokertracker" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .7.8 1.1 1.4.7L20.6 13c.6-.4.6-1.3 0-1.7L5.4 2.1C4.8 1.7 4 2.1 4 2.8z"/></svg>
+              Get it on Google Play
+            </a>
+            <span class="btn play-soon" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .7.8 1.1 1.4.7L20.6 13c.6-.4.6-1.3 0-1.7L5.4 2.1C4.8 1.7 4 2.1 4 2.8z"/></svg>
+              Coming soon to Google Play
+            </span>
+            <a class="btn btn-ghost" href="#features">Features</a>
+          </div>
+        </div>
+
+        <div class="app-visual">
+          <div class="deck" aria-hidden="true">
+            <div class="pcard back b1"></div>
+            <div class="pcard back b2"></div>
+            <div class="pcard front">
+              <div class="idx tl">A<span>♠</span></div>
+              <div class="pip"><svg viewBox="0 0 64 64"><path fill="#3DDC84" d="M32 8c-6 10-21 17-21 29 0 7 5 11 11 11 4 0 7-2 8.5-4.5C30 50 28 54 24 57h16c-4-3-6-7-6.5-13.5C35 46 38 48 42 48c6 0 11-4 11-11C53 25 38 18 32 8z"/></svg></div>
+              <div class="idx br">A<span>♠</span></div>
+            </div>
+          </div>
+          <div class="ledger" role="img" aria-label="Example settlement: Igor pays John $10.00, Max pays John $5.00, Patrick pays John $5.00, Ethan pays John $1.85, Ethan pays Chloe $2.35. Chips balanced.">
+            <div class="ledger-head"><strong>Settlement</strong><span>1 OCT · 7 PLAYERS</span></div>
+            <ol>
+            <li><span class="av">IG</span><span class="who">Igor <span class="to">→</span> John</span><span class="amt">$10.00</span></li>
+            <li><span class="av">MA</span><span class="who">Max <span class="to">→</span> John</span><span class="amt">$5.00</span></li>
+            <li><span class="av">PA</span><span class="who">Patrick <span class="to">→</span> John</span><span class="amt">$5.00</span></li>
+            <li><span class="av">ET</span><span class="who">Ethan <span class="to">→</span> John</span><span class="amt">$1.85</span></li>
+            <li><span class="av">ET</span><span class="who">Ethan <span class="to">→</span> Chloe</span><span class="amt">$2.35</span></li>
+            </ol>
+            <div class="ledger-foot"><span>1 400 / 1 400 chips</span><span class="ok">● balanced</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker"><span class="suit" aria-hidden="true">♥</span> Features</p>
+          <h2 id="features-title">Everything the banker used to do on paper</h2>
+        </div>
+        <ul class="grid grid-4 plain-list">
+          <li class="card feature"><span class="num" aria-hidden="true">01</span><h3>Quick setup</h3><p>Add players, set blinds and chip values in seconds.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">02</span><h3>Live tracking</h3><p>Buy-ins, rebuys and cash-outs for every player, with undo.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">03</span><h3>Chip check</h3><p>Instantly see if any chips are missing or extra.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">04</span><h3>Fair settlement</h3><p>A short “A pays B” list, rounded to real notes and coins.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">05</span><h3>History &amp; stats</h3><p>Profit, games played and buy-ins for every player.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">06</span><h3>Game handover</h3><p>Pass a running game to another phone by QR code.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">07</span><h3>Bomb pot timer</h3><p>Get a reminder even when the app is closed.</p></li>
+          <li class="card feature"><span class="num" aria-hidden="true">08</span><h3>5 languages</h3><p>English, Russian, Spanish, German and French.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section tight" aria-labelledby="screens-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker"><span class="suit" aria-hidden="true">♦</span> Screenshots</p>
+          <h2 id="screens-title">A look inside</h2>
+        </div>
+        <!-- Screenshot files: /assets/screenshots/screenshot-1.jpg … screenshot-6.jpg (see README) -->
+        <ul class="gallery" tabindex="0" aria-label="App screenshots, scrollable">
+          <li><figure><a href="/assets/screenshots/screenshot-1.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-1.jpg" alt="New game setup: starting stack, payout rounding and optional side games like bomb pot and firetruck" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>New game</figcaption></figure></li>
+          <li><figure><a href="/assets/screenshots/screenshot-2.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-2.jpg" alt="Live game: money and chips on the table, blinds, and a seating chart of the players" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Live game</figcaption></figure></li>
+          <li><figure><a href="/assets/screenshots/screenshot-3.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-3.jpg" alt="End game chip check confirming every chip is accounted for, with each player's final chips" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Chip check</figcaption></figure></li>
+          <li><figure><a href="/assets/screenshots/screenshot-4.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-4.jpg" alt="Final chip counts with a results table of buy-ins, chips, cash-out and net for each player" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Results</figcaption></figure></li>
+          <li><figure><a href="/assets/screenshots/screenshot-5.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-5.jpg" alt="Settlement: a short list of who pays whom, with checkboxes to mark payments" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Settlement</figcaption></figure></li>
+          <li><figure><a href="/assets/screenshots/screenshot-6.jpg" target="_blank" rel="noopener"><img src="/assets/screenshots/screenshot-6.jpg" alt="Players list with profit, games played and buy-ins for each player" width="576" height="1224" loading="lazy" decoding="async"><span class="visually-hidden"> (opens full size)</span></a><figcaption>Players</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Privacy and pricing">
+      <div class="container grid grid-2">
+        <div class="card stat-card">
+          <h2>Your data stays yours</h2>
+          <p>Everything is stored on your device. No sign-up, no account, no server, no cloud sync — your games and players never leave your phone.</p>
+        </div>
+        <div class="card stat-card">
+          <h2>Free, with an easy upgrade</h2>
+          <p>HomePoker Cashier is free and supported by ads. A one-time in-app purchase removes them for good — no subscriptions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" aria-labelledby="support-title">
+      <div class="container">
+        <div class="card support">
+          <div>
+            <p class="kicker"><span class="suit" aria-hidden="true">♣</span> Support</p>
+            <h2 id="support-title">Questions or bug reports?</h2>
+            <p>Write to <a href="mailto:zangormosupport@gmail.com">zangormosupport@gmail.com</a>.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:zangormosupport@gmail.com">Email support</a>
+            <a class="btn" href="https://zangormo.github.io/poker_cashier_privacy_page/">Privacy Policy</a>
+          </div>
+        </div>
+        <p class="disclaimer">HomePoker Cashier is a scorekeeping tool only. It does not process real-money transactions, connect to bank accounts, or facilitate gambling. Intended for adults (18+).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Zangormo Util</p>
+          <p>Small, focused Android apps. Riga, Latvia.</p>
+        </div>
+        <ul>
+          <li>App support: <a href="mailto:zangormosupport@gmail.com">zangormosupport@gmail.com</a></li>
+          <li><a href="https://zangormo.github.io/poker_cashier_privacy_page/">Privacy Policy (HomePoker Cashier)</a></li>
+          <li class="social"><a href="https://github.com/Zangormo" rel="noopener">GitHub</a><a href="https://linkedin.com/in/ilja-birjukovs" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <p class="copyright">© 2026 Zangormo Util</p>
+    </div>
+  </footer>
+</body>
+</html>
